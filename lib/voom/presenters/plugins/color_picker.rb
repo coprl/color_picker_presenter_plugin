@@ -5,24 +5,22 @@ module Voom
     module Plugins
       module ColorPicker
         module DSLComponents
-          def color_picker(**attributes, &block)
-            self << ColorPicker::Component.new(parent: self, **attributes, &block)
+          def color_picker(name, **attributes, &block)
+            self << ColorPicker::Component.new(name, parent: self, **attributes, &block)
           end
 
         end
 
         module WebClientComponents
-          VIEW_DIR = File.join(__dir__, 'color_picker')
 
           def render_header_color_picker(_pom, render:)
-            render.call :erb, :header, views: VIEW_DIR
+            view_dir = File.join(__dir__, 'color_picker')
+            render.call :erb, :header, views: view_dir
           end
 
-          def render_color_picker(comp,
-                                  render:,
-                                  components:,
-                                  index:)
-            render.call :erb, :picker, views: VIEW_DIR,
+          def render_color_picker(comp, render:, components:, index:)
+            view_dir = File.join(__dir__, 'color_picker')
+            render.call :erb, :picker, views: view_dir,
                         locals: {comp: comp,
                                  components: components,
                                  index: index}
