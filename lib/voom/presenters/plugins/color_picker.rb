@@ -5,6 +5,7 @@ module Voom
     module Plugins
       module ColorPicker
         module DSLComponents
+
           def color_picker(name, **attributes, &block)
             self << ColorPicker::Component.new(name, parent: self, **attributes, &block)
           end

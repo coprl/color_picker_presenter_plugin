@@ -10,11 +10,11 @@ module Voom
 
           def initialize(name, **attribs, &block)
             @name = name
-            @value               = attribs.delete(:value){ nil }
-            @color_margin        = attribs.delete(:color_margin){ "6" }
-            @colors_per_row      = attribs.delete(:color_per_row){ "5" }
-            @color_size          = attribs.delete(:color_size){ "54" }
-            @default_tint        = attribs.delete(:default_tint){ "500" }
+            @value               = attribs.delete(:value){ '' }
+            @color_margin        = attribs.delete(:color_margin){ 6 }
+            @colors_per_row      = attribs.delete(:color_per_row){ 5 }
+            @color_size          = attribs.delete(:color_size){ 54 }
+            @default_tint        = attribs.delete(:default_tint){ 500 }
             @fixed_min_height    = attribs.delete(:fixed_min_height){ true }
             @palette             = attribs.delete(:palette){ "material-full" }
             @use_spectrum_picker = attribs.delete(:use_spectrum_picker){ true }
