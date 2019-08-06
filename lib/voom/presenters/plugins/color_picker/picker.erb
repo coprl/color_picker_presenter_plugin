@@ -1,10 +1,24 @@
-<md-color-picker
-  value="<%=comp.value %>"
-  palette="<%= comp.palette %>"
-  default-tint="<%= comp.default_tint %>"
-  use-spectrum-picker="<%= comp.use_spectrum_picker %>"
-  color-margin="<%= comp.color_margin %>"
-  colors-per-row="<%= comp.colors_per_row %>"
-  color-size="<%= comp.color_size %>"
-  fixed-min-height="<%= comp.fixed_min_height %>"
-></md-color-picker>
+<div id="<%= comp.id %>"
+     class="v-plugin v-plugin--color-picker v-input mdc-text-field mdc-text-field--outlined v-focusable"
+     style="height: auto;"
+     data-plugin-callback="ColorPicker">
+  <md-color-picker
+    value="<%=comp.value %>"
+    palette="<%= comp.palette %>"
+    default-tint="<%= comp.default_tint %>"
+    use-spectrum-picker="<%= comp.use_spectrum_picker %>"
+    color-margin="<%= comp.color_margin %>"
+    colors-per-row="<%= comp.colors_per_row %>"
+    color-size="<%= comp.color_size %>"
+    fixed-min-height="<%= comp.fixed_min_height %>"
+    style="padding: 10px;"
+  ></md-color-picker>
+  <input type="hidden" class="v-color-input v-input v-hidden-field" name="<%= comp.name %>" value="<%= comp.value %>" />
+  <div class="mdc-notched-outline mdc-notched-outline--upgraded mdc-notched-outline--notched">
+    <div class="mdc-notched-outline__leading"></div>
+    <div class="mdc-notched-outline__notch">
+      <label for="<%= comp.id %>-input" class="mdc-floating-label mdc-floating-label--float-above">Color</label>
+    </div>
+    <div class="mdc-notched-outline__trailing"></div>
+  </div>
+</div>

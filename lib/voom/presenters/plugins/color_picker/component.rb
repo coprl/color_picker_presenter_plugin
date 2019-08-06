@@ -11,12 +11,12 @@ module Voom
           def initialize(name, **attribs, &block)
             @name = name
             @value               = attribs.delete(:value){ '' }
-            @color_margin        = attribs.delete(:color_margin){ 6 }
-            @colors_per_row      = attribs.delete(:color_per_row){ 5 }
-            @color_size          = attribs.delete(:color_size){ 54 }
+            @color_margin        = attribs.delete(:color_margin){ 4 }
+            @colors_per_row      = attribs.delete(:color_per_row){ 6 }
+            @color_size          = attribs.delete(:color_size){ 20 }
             @default_tint        = attribs.delete(:default_tint){ 500 }
             @fixed_min_height    = attribs.delete(:fixed_min_height){ true }
-            @palette             = attribs.delete(:palette){ "material-full" }
+            @palette             = attribs.delete(:palette){ "material" }
             @use_spectrum_picker = attribs.delete(:use_spectrum_picker){ true }
             super(type: :color_picker, **attribs, &block)
             expand!
