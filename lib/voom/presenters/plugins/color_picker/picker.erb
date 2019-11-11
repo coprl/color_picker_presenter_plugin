@@ -13,7 +13,8 @@
     fixed-min-height="<%= comp.fixed_min_height %>"
     style="padding: 10px;"
   ></md-color-picker>
-  <input type="hidden" class="v-color-input v-input v-hidden-field" name="<%= comp.name %>" value="<%= comp.value %>" />
+  <input type="hidden" class="v-color-input v-input v-hidden-field" name="<%= comp.name %>" value="<%= comp.value %>"
+    <%= erb :"components/event", locals: { comp: comp, events: comp.events, parent_id:  "#{comp.id}-input" } %> />
   <div class="mdc-notched-outline mdc-notched-outline--upgraded mdc-notched-outline--notched">
     <div class="mdc-notched-outline__leading"></div>
     <div class="mdc-notched-outline__notch">
