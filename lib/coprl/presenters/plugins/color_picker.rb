@@ -1,6 +1,6 @@
 require_relative 'color_picker/component'
 
-module Voom
+module Coprl
   module Presenters
     module Plugins
       module ColorPicker
@@ -13,15 +13,16 @@ module Voom
         end
 
         module WebClientComponents
+          def view_dir_color_picker(pom)
+            File.join(__dir__, '../../../..', 'views', 'components')
+          end
 
-          def render_header_color_picker(_pom, render:)
-            view_dir = File.join(__dir__, 'color_picker')
-            render.call :erb, :header, views: view_dir
+          def render_header_color_picker(pom, render:)
+            render.call :erb, :color_picker_header, views: view_dir_color_picker(pom)
           end
 
           def render_color_picker(comp, render:, components:, index:)
-            view_dir = File.join(__dir__, 'color_picker')
-            render.call :erb, :picker, views: view_dir,
+            render.call :erb, :color_picker, views: view_dir_color_picker(comp),
                         locals: {comp: comp,
                                  components: components,
                                  index: index}

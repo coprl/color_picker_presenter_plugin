@@ -1,4 +1,6 @@
 source "https://rubygems.org"
 
-# Specify your gem's dependencies in chart_presenter_plugin.gemspec
+# git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
+
+# Specify your gem's dependencies in color_picker_presenter_plugin.gemspec
 gemspec
